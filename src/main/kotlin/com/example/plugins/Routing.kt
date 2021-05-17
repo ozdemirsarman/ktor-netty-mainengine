@@ -1,10 +1,7 @@
 package com.example.plugins
 
 
-
-import kotlin.math.sin
 import kotlin.random.Random
-
 import io.ktor.routing.*
 import io.ktor.http.*
 import io.ktor.application.*
@@ -18,21 +15,9 @@ import org.slf4j.event.Level
 import io.ktor.websocket.*
 import io.ktor.http.cio.websocket.*
 import java.time.*
-
-import java.io.*
-import java.util.*
-import io.ktor.network.selector.*
-import io.ktor.network.sockets.*
-import io.ktor.network.util.*
-import kotlin.coroutines.*
-import kotlinx.coroutines.*
-import io.ktor.utils.io.*
-
 import io.ktor.client.*
+import java.util.*
 
-import io.ktor.client.request.*
-import io.ktor.client.statement.*
-import io.ktor.http.*
 
 
 
@@ -64,6 +49,7 @@ fun Application.configureRouting() {
         level = Level.TRACE
         filter { call -> call.request.path().startsWith("/") }
     }
+
 
     install(io.ktor.websocket.WebSockets) {
         pingPeriod = Duration.ofSeconds(15)
@@ -99,6 +85,14 @@ fun Application.configureRouting() {
         get("/") {
             call.respondText("HELLO WORLD!", contentType = ContentType.Text.Plain)
         }
+
+        get("/date") {
+
+            val dateNow = Calendar.getInstance().time
+
+            call.respondText("$dateNow", contentType = ContentType.Text.Plain)
+        }
+
 
         authenticate("myBasicAuth") {
             get("/protected/route/basic") {
