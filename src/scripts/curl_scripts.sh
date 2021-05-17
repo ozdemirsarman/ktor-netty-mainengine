@@ -1,0 +1,22 @@
+#curl -u "shopper1:password" "localhost:8080/api/book/list?sortby=title&asc=true"
+#curl -v "localhost:8080/api/book/list?sortby=title&asc=true"
+#curl -u "shopper1:password" "localhost:8080/api/book/list?sortby=title&asc=true"
+#curl -v "localhost:8080/api/book/list?sortby=title&asc=true"
+#curl "localhost:8080/allships"
+#curl "localhost:8080/oneship/5eab371fe213b239a2083c4b"
+#curl "localhost:8080/ships?fuelmin=40.0"
+#curl -X POST -v -H "Content-Type: application/json" -d '{"id": "5eab3f11115ce44ec6732c6c", "name": "round", "fuel": 20.0}' "localhost:8080/replace"
+#curl -X POST "localhost:8080/fuelup/5eab3f11115ce44ec6732c6c"
+#curl "localhost:8080/calllogging/test"
+#curl "localhost:8080"
+#curl -v -u user1:user1abc123 localhost:8080/trendycolor/nextmonth
+#curl -v -u mike:password localhost:8080/secret/weather
+#curl -v -d "Test 123 data to post" "localhost:8080/text"
+#curl -v -f "username=mike" -F "password=mypassword" -F "role=admin" "localhost:8080/form"
+#cd $(dirname $0)
+#curl -v -F "file=@myfile.txt" "localhost:8080/file"
+#curl -v -H "testheader: value123" "localhost:8080/"
+#curl -v "http://localhost:8080/book/flowers/list?sortby=author,releasedate&asc=1"
+#curl -H "Accept: application/json" "localhost:8080/spaceship"
+#curl -H "Accept: application/xml" "localhost:8080/spaceship"
+#curl -X POST -d "Rainy"  "localhost:8080/weatherforecast"
