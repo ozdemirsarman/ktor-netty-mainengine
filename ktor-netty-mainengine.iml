@@ -108,5 +108,11 @@
     <orderEntry type="library" name="Maven: io.ktor:ktor-client-cio-jvm:1.5.4" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.4.3-native-mt" level="project" />
     <orderEntry type="library" name="Maven: io.ktor:ktor-network-tls-jvm:1.5.4" level="project" />
+    <orderEntry type="library" name="Maven: io.ktor:ktor-thymeleaf:1.5.4" level="project" />
+    <orderEntry type="library" name="Maven: org.thymeleaf:thymeleaf:3.0.12.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: ognl:ognl:3.1.26" level="project" />
+    <orderEntry type="library" name="Maven: org.javassist:javassist:3.20.0-GA" level="project" />
+    <orderEntry type="library" name="Maven: org.attoparser:attoparser:2.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.unbescape:unbescape:1.1.6.RELEASE" level="project" />
   </component>
 </module>

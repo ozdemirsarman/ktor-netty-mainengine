@@ -98,6 +98,11 @@
             <artifactId>ktor-client-cio-jvm</artifactId>
             <version>${ktor_version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.ktor</groupId>
+            <artifactId>ktor-thymeleaf</artifactId>
+            <version>${ktor_version}</version>
+        </dependency>
     </dependencies>
     <build>
         <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>

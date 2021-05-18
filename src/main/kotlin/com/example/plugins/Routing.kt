@@ -16,13 +16,21 @@ import io.ktor.websocket.*
 import io.ktor.http.cio.websocket.*
 import java.time.*
 import io.ktor.client.*
+import io.ktor.thymeleaf.*
+import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
 import java.util.*
-
 
 
 
 fun Application.configureRouting() {
 
+    install(Thymeleaf) {
+        setTemplateResolver(ClassLoaderTemplateResolver().apply {
+            prefix = "templates/"
+            suffix = ".html"
+            characterEncoding = "utf-8"
+        })
+    }
 
 
     install(Authentication) {
@@ -70,6 +78,17 @@ fun Application.configureRouting() {
 
 
     routing {
+
+
+        get("/index") {
+
+            val dateNow = Calendar.getInstance().time
+
+            val sampleUser = User(1, "John")
+
+            call.respond(ThymeleafContent("index", mapOf("user" to sampleUser)))
+
+        }
 
         get("/listing") {
             call.respondText("Listing items")
@@ -126,4 +145,8 @@ fun Application.configureRouting() {
 }
 
 
+
+
+
 data class MySession(val count: Int = 0)
+data class User(val id: Int, val name: String)
