@@ -19,6 +19,9 @@ import io.ktor.client.*
 import io.ktor.thymeleaf.*
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
 import java.util.*
+import io.ktor.html.*
+import io.ktor.http.content.*
+import kotlinx.html.*
 
 
 
@@ -79,6 +82,10 @@ fun Application.configureRouting() {
 
     routing {
 
+        static("/static") {
+            resources("files")
+        }
+
 
         get("/index") {
 
@@ -89,6 +96,49 @@ fun Application.configureRouting() {
             call.respond(ThymeleafContent("index", mapOf("user" to sampleUser)))
 
         }
+
+        get("/homepage") {
+            call.respondText("<br><center><h1>Home Page</center></h1>", ContentType.Text.Html, HttpStatusCode.OK)
+        }
+
+        get("/homepage2") {
+            val name = "Ktor"
+            val dateNow = Calendar.getInstance().time
+            call.respondHtml {
+                head {
+                    title {
+                        +name
+                    }
+                }
+                body {
+                    h1 {
+                        +"Hello from $name!"
+                    }
+
+                    h1 {
+
+                        +"Date is $dateNow"
+
+                    }
+                }
+            }
+        }
+
+
+        get("/html-dsl") {
+            call.respondHtml {
+                body {
+                    h1 { +"HTML" }
+                    ul {
+                        for (n in 1..10) {
+                            li { +"$n" }
+                        }
+                    }
+                }
+            }
+        }
+
+
 
         get("/listing") {
             call.respondText("Listing items")

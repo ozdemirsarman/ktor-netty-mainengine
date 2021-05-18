@@ -17,6 +17,7 @@
         <main.class>io.ktor.server.netty.EngineMain</main.class>
     </properties>
     <repositories>
+
     </repositories>
     <dependencies>
         <dependency>
@@ -103,6 +104,12 @@
             <artifactId>ktor-thymeleaf</artifactId>
             <version>${ktor_version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.ktor</groupId>
+            <artifactId>ktor-html-builder</artifactId>
+            <version>${ktor_version}</version>
+        </dependency>
+
     </dependencies>
     <build>
         <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
